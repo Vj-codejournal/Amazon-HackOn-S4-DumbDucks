@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="amazon logo1.jpeg" alt="Amazon Logo">
+    </div>
+    <div class="container">
+        <div class="info-box">
+            <p><strong>Customer Name:</strong> Customer's Good Name</p>
+            <p><strong>Product ID:</strong> <span id="product-id">Loading...</span></p>
+            <p><strong>Product Name:</strong> Amazon Echo (11268H)</p>
+        </div>
+        <h2 class="h2">Your Opinion Matters</h2>
+        <p class="h3"><b>Your Feedback is Crucial to Maintain Authenticity</b></p>
+        <form action="">
+            <div class="form-group">
+                <label for="question1">Does the packaging have a security seal, hologram, or any other authenticity
+                    markers?</label>
+                <input type="radio" name="question1" value="yes"> Yes
+                <input type="radio" name="question1" value="no"> No
+            </div>
+            <div class="form-group">
+                <label for="question2">Are there any spelling errors, unusual fonts, or inconsistencies on the
+                    packaging?</label>
+                <input type="radio" name="question2" value="yes"> Yes
+                <input type="radio" name="question2" value="no"> No
+            </div>
+            <div class="form-group">
+                <label>Does it match the images and description on the Amazon listing?</label>
+                <input type="radio" name="question3" value="yes"> Yes
+                <input type="radio" name="question3" value="no"> No
+            </div>
+            <div class="form-group">
+                <label>Do the labels or logos appear altered, misshapen, or different from the authentic ones?</label>
+                <input type="radio" name="question4" value="yes"> Yes
+                <input type="radio" name="question4" value="no"> No
+            </div>
+            <div class="form-group">
+                <label>Are there any visible defects or irregularities in the product?</label>
+                <input type="radio" name="question5" value="yes"> Yes
+                <input type="radio" name="question5" value="no"> No
+            </div>
+            <div class="form-group">
+                <label for="review">Describe your issue (if any) in detail:</label>
+                <textarea id="review" name="review"></textarea>
+            </div>
+            <h2>Add Public Review Below</h2>
+            <p><b>Add a public review to let other buyers know about the product</b></p>
+            <div class="form-group">
+                <label for="rating">How would you rate it?</label>
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="video">Share a video or photo:</label>
+                <input type="file" id="video" name="video" accept="video/*,image/*">
+            </div>
+            <div class="form-group">
+                <label for="title">Title your review:</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="reviewText">Write your review:</label>
+                <textarea id="reviewText" name="reviewText"></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit Feedback and claim your coins <img src="coin.jpg"
+                    alt="Coin"></button>
+        </form>
+    </div>
+</body>
+
+</html>
