@@ -19,5 +19,16 @@ function displayProductId() {
     if (customerName) {
         document.getElementById('customer-name').textContent = customerName;
     }
+    if (productName) {
+        document.getElementById('product-name').textContent = productName;
+    } else {
+        document.getElementById('product-name').textContent = 'Product Name not found';
+    }
+    if (customerName) {
+        document.getElementById('customer-name').textContent = customerName;
+    } else {
+        document.getElementById('customer-name').textContent = 'Customer Name not found';
+    }
+
 }
 window.onload = displayProductId;
