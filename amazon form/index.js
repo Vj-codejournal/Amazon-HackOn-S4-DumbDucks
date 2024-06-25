@@ -8,10 +8,16 @@ function getParameterByName(name, url = window.location.href) {
 }
 function displayProductId() {
     const productId = getParameterByName('product_id');
+    const productName = getParameterByName('product_name');
+    const customerName = getParameterByName('customer_name');
     if (productId) {
         document.getElementById('product-id').textContent = productId;
-    } else {
-        document.getElementById('product-id').textContent = 'Product ID not found';
+    }
+    if (productName) {
+        document.getElementById('product-name').textContent = productName;
+    }
+    if (customerName) {
+        document.getElementById('customer-name').textContent = customerName;
     }
 }
 window.onload = displayProductId;

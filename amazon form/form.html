@@ -15,13 +15,13 @@
     </div>
     <div class="container">
         <div class="info-box">
-            <p><strong>Customer Name:</strong> Customer's Good Name</p>
-            <p><strong>Product ID:</strong> <span id="product-id">Loading...</span></p>
-            <p><strong>Product Name:</strong> Amazon Echo (11268H)</p>
+            <p><strong>Customer Name:</strong> <span id="customer-name">Michael Jordan</span></p>
+            <p><strong>Product ID:</strong> <span id="product-id">afh12345</span></p>
+            <p><strong>Product Name:</strong> <span id="product-name">Amazon Echo(11268H)</span></p>
         </div>
         <h2 class="h2">Your Opinion Matters</h2>
         <p class="h3"><b>Your Feedback is Crucial to Maintain Authenticity</b></p>
-        <form action="">
+        <form id="feedback-form">
             <div class="form-group">
                 <label for="question1">Does the packaging have a security seal, hologram, or any other authenticity
                     markers?</label>
@@ -81,6 +81,46 @@
                     alt="Coin"></button>
         </form>
     </div>
+    <script>
+        document.getElementById('feedback-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+
+            const data = {
+                customerName: document.getElementById('customer-name').textContent,
+                productId: document.getElementById('product-id').textContent,
+                productName: document.getElementById('product-name').textContent,
+                Q1: formData.get('question1') === 'yes',
+                Q2: formData.get('question2') === 'yes',
+                Q3: formData.get('question3') === 'yes',
+                Q4: formData.get('question4') === 'yes',
+                Q5: formData.get('question5') === 'yes',
+                sellerDescription: formData.get('review') || "",
+                rating: parseInt(formData.get('rating'), 10),
+                title: formData.get('title') || "",
+                description: formData.get('reviewText') || ""
+            };
+            console.log(data);
+            fetch('http://localhost:5000/api/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Handle success, e.g., show a success message
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    // Handle error, e.g., show an error message
+                });
+        });
+    </script>
+
 </body>
 
 </html>

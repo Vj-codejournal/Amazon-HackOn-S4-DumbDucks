@@ -1,0 +1,16 @@
+ python -m venv env   
+ env/Scripts/activate     
+ pip install unstructured
+  pip install langchain 
+   pip install langchain_experimental 
+   pip install langchain-community 
+   touch server.py  
+   pip install python-dotenv
+       
+pip install jsonify 
+pip install flask[async]                                                                                                                
+pip install Flask 
+ pip install html2text  
+
+
+ env/Scripts/activate  

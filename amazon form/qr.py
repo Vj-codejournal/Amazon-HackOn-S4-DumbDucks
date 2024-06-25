@@ -2,7 +2,9 @@ import qrcode
 
 # Data to embed in the QR code
 product_id = "afr12345"
-data = f"http://localhost:5000/form.html?product_id={product_id}"
+customer_name="John Wick"
+product_name="Amazon Echo(11268H)"
+data = f"http://localhost:3000/form.html?product_id={product_id}&customer_name={customer_name}&product_name={product_name}"
 
 # Generate QR code
 qr = qrcode.QRCode(

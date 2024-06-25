@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
 
 const formSchema = new mongoose.Schema({
+    customerName:{
+        type:String
+    },
+    productId:{
+        type:String
+    },
+    productName:{
+        type:String
+    },
     Q1:{
         type:Boolean,
         required:true

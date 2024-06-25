@@ -13,4 +13,20 @@ router.post("/submit", async (req, res) => {
     }
 });
 
+router.get("/get", async (req, res) => {
+        try {
+            const forms = await Form.find();
+            const result = forms.map(form => {
+                return {
+                    name: form.costumerName,
+                    description: `${form.title} and ${form.description}`
+                };
+            });
+            console.log(result);
+            res.status(200).json(result);
+        } catch (error) {
+            res.status(500).json({ message: error.message });
+        }
+    });
+
 module.exports = router;
